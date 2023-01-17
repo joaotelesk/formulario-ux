@@ -1,3 +1,6 @@
+/* Styles */
+import styles from "../styles/Home.module.scss";
+
 /* Components */
 import ReviewForm from "@/src/components/ReviewForm";
 import ThanksForm from "@/src/components/ThanksForm";
@@ -23,19 +26,22 @@ export default function Home() {
         <link rel="icon" href="/" />
       </Head>
       <main>
-        <div className="app">
-          <div className="header">
+        <div className={styles.app}>
+          <div className={styles.header}>
             <h2>Pesquisa UX</h2>
             <p>
               Com sua colaboração, vamos desenvolver o projeto Onebit-Social.
               Por favor, preencha o formulário abaixo e nos envie sua opinião.
             </p>
           </div>
-          <div className="form-container">
+          <div className={styles["form-container"]}>
             <Steps currentStep={currentStep} />
+
             <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
-              <div className="input-container">{currentComponent}</div>
-              <div className="actions">
+              <div className={styles["input-container"]}>
+                {currentComponent}
+              </div>
+              <div className={styles.actions}>
                 {!isFirstStep && (
                   <button
                     type="button"
@@ -46,12 +52,12 @@ export default function Home() {
                   </button>
                 )}
                 {!isLastStep ? (
-                  <button>
+                  <button
+                    type="button"
+                    onClick={() => changeStep(currentStep + 1)}
+                  >
                     <span>Avançar</span>
-                    <GrFormNext
-                      type="button"
-                      onClick={() => changeStep(currentStep + 1)}
-                    />
+                    <GrFormNext />
                   </button>
                 ) : (
                   <button type="button">
