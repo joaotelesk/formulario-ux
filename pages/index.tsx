@@ -1,5 +1,4 @@
 /* Styles */
-import styles from "../styles/Home.module.scss";
 
 /* Components */
 import ReviewForm from "@/src/components/ReviewForm";
@@ -26,26 +25,25 @@ export default function Home() {
         <link rel="icon" href="/" />
       </Head>
       <main>
-        <div className={styles.app}>
-          <div className={styles.header}>
-            <h2>Pesquisa UX</h2>
+        <div className="text-center pt-10 text-slate-100">
+          <div>
+            <h2 className="font-semibold text-2xl pb-2">Pesquisa UX</h2>
             <p>
               Com sua colaboração, vamos desenvolver o projeto Onebit-Social.
               Por favor, preencha o formulário abaixo e nos envie sua opinião.
             </p>
           </div>
-          <div className={styles["form-container"]}>
+          <div className="flex flex-col gap-5 h-screen items-center pt-20">
             <Steps currentStep={currentStep} />
 
             <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
-              <div className={styles["input-container"]}>
-                {currentComponent}
-              </div>
-              <div className={styles.actions}>
+              <div>{currentComponent}</div>
+              <div className="flex pt-10 gap-2">
                 {!isFirstStep && (
                   <button
                     type="button"
                     onClick={() => changeStep(currentStep - 1)}
+                    className="btn flex items-center gap-2"
                   >
                     <GrFormPrevious />
                     <span>Voltar</span>
@@ -53,6 +51,7 @@ export default function Home() {
                 )}
                 {!isLastStep ? (
                   <button
+                    className="btn flex items-center gap-2"
                     type="button"
                     onClick={() => changeStep(currentStep + 1)}
                   >
@@ -60,9 +59,9 @@ export default function Home() {
                     <GrFormNext />
                   </button>
                 ) : (
-                  <button type="button">
+                  <button type="button" className="btn flex items-center gap-2">
                     <span>Enviar</span>
-                    <FiSend />
+                    <FiSend color="black" />
                   </button>
                 )}
               </div>
