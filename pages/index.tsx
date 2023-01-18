@@ -7,13 +7,43 @@ import UserForm from "@/src/components/UserForm";
 import Head from "next/head";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { FiSend } from "react-icons/fi";
+import Steps from "@/src/components/Steps";
 
 /* Hooks */
 import useForm from "@/src/hooks/useForm";
-import Steps from "@/src/components/Steps";
+import { useState } from "react";
+
+type FormFields = {
+  name: string;
+  birth: string;
+  city: string;
+  quest1: string;
+  quest2: string;
+  quest3: string;
+  quest4: string;
+};
+const formTemplate: FormFields = {
+  name: "",
+  birth: "",
+  city: "",
+  quest1: "",
+  quest2: "",
+  quest3: "",
+  quest4: "",
+};
 
 export default function Home() {
-  const formComponents = [<UserForm />, <ReviewForm />, <ThanksForm />];
+  const [data, setData] = useState(formTemplate);
+  function updateFieldHandler(key: string, value: string) {
+    setData((prev) => {
+      return { ...prev, [key]: value };
+    });
+  }
+  const formComponents = [
+    <UserForm data={data} updateFieldHandler={updateFieldHandler} />,
+    <ReviewForm data={data} updateFieldHandler={updateFieldHandler} />,
+    <ThanksForm data={data} />,
+  ];
   const { currentStep, currentComponent, changeStep, isLastStep, isFirstStep } =
     useForm(formComponents);
   return (
@@ -33,12 +63,12 @@ export default function Home() {
               Por favor, preencha o formulário abaixo e nos envie sua opinião.
             </p>
           </div>
-          <div className="flex flex-col gap-5 h-screen items-center pt-20">
+          <div className="flex flex-col gap-5 h-screen items-center pt-20 ">
             <Steps currentStep={currentStep} />
 
             <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
               <div>{currentComponent}</div>
-              <div className="flex pt-10 gap-2">
+              <div className="flex pt-10 gap-2  justify-center mb-4">
                 {!isFirstStep && (
                   <button
                     type="button"
@@ -50,11 +80,7 @@ export default function Home() {
                   </button>
                 )}
                 {!isLastStep ? (
-                  <button
-                    className="btn flex items-center gap-2"
-                    type="button"
-                    onClick={() => changeStep(currentStep + 1)}
-                  >
+                  <button className="btn flex items-center gap-2" type="submit">
                     <span>Avançar</span>
                     <GrFormNext />
                   </button>
