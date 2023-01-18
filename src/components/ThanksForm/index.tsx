@@ -19,18 +19,29 @@ export default function ThanksForm({ data }: UserProps) {
         <p>Para concluir clique no botão de Enviar abaixo.</p>
         <h3 className="text-start">Aqui está o resumo da sua avaliação:</h3>
         <div className="text-start mt-4">
-          <span>
-            <p>Nome: {data.name}</p>
-            <p>Idade: {data.birth}</p>
-            <p>Cidade:{data.city}</p>
-          </span>
+          <p>
+            Nome: <span className="text-slate-400">{data.name}</span>
+          </p>
+          <p>
+            Idade: <span className="text-slate-400">{data.birth}</span>
+          </p>
+          <p>
+            Cidade: <span className="text-slate-400">{data.city}</span>
+          </p>
 
-          <span>
-            <p>Questão 1: {data.quest1}</p>
-            <p>Questão 2: {data.quest2}</p>
-            <p>Questão 3: {data.quest3}</p>
-            <p>Questão 4: {data.quest4}</p>
-          </span>
+          <p>
+            Questão 1:
+            <span className="text-slate-400">{data.quest1}</span>
+          </p>
+          <p>
+            Questão 2: <span className="text-slate-400">{data.quest2}</span>
+          </p>
+          <p>
+            Questão 3: <span className="text-slate-400">{data.quest3}</span>
+          </p>
+          <p>
+            Questão 4: <span className="text-slate-400">{data.quest4}</span>
+          </p>
         </div>
       </div>
     </>
