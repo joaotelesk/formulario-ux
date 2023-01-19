@@ -25,9 +25,9 @@ export default function UserForm({ data, updateFieldHandler }: UserProps) {
           minLength={3}
           onChange={(e) => updateFieldHandler("name", e.target.value)}
         />
-        <div className="flex text-start gap-3 mt-6">
+        <div className=" columns-2 text-start gap-2 mt-4">
           <div>
-            <label htmlFor="birth">Aniversário</label>
+            <label htmlFor="birth">Aniversário:</label>
             <input
               type="date"
               name="birth"
@@ -41,7 +41,7 @@ export default function UserForm({ data, updateFieldHandler }: UserProps) {
             />
           </div>
           <div>
-            <label htmlFor="city">Cidade/Estado</label>
+            <label htmlFor="city">Cidade/Estado:</label>
             <input
               type="text"
               name="city"

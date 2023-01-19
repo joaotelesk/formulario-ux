@@ -63,7 +63,7 @@ export default function Home() {
               Por favor, preencha o formulário abaixo e nos envie sua opinião.
             </p>
           </div>
-          <div className="flex flex-col gap-5 h-screen items-center pt-20 ">
+          <div className="flex flex-col gap-5 items-center pt-20  ">
             <Steps currentStep={currentStep} />
 
             <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
