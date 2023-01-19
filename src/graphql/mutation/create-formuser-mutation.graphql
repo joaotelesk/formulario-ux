@@ -1,0 +1,23 @@
+mutation CreateFormUserMutation(
+  $name: String!
+  $birth: String!
+  $city: String!
+  $quest1: String!
+  $quest2: String!
+  $quest3: String!
+  $quest4: String!
+) {
+  CreateFormUser(
+    data: {
+      name: $name
+      birth: $birth
+      city: $city
+      quest1: $quest1
+      quest2: $quest2
+      quest3: $quest3
+      quest4: $quest4
+    }
+  ) {
+    id
+  }
+}
