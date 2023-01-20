@@ -1,38 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center" id="top">
+  <img src="./public/tela.png" alt="FormularioDePesquisa" />
 
-## Getting Started
+&#xa0;
 
-First, run the development server:
+</div>
+
+<h1 align="center">Formulario UX</h1>
+
+<!-- Status -->
+
+<!-- <h4 align="center">
+	🚧  [texto] 🚀 Under construction...  🚧
+</h4>
+<hr> -->
+
+<p align="center">
+  <a href="#-sobre">Sobre</a> &#xa0; | &#xa0;
+  <a href="#skateboard-funcionalidades">Funcionalidades</a> &#xa0; | &#xa0;
+  <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requisitos-para-rodar-a-aplicação">Requisitos</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-iniciando">Iniciando</a> &#xa0; | &#xa0;
+  <a href="#-configurações-adicionais-ao-projeto">Schemas</a> &#xa0; | &#xa0;
+  <a href="#memo-licença">Licença</a> &#xa0; | &#xa0;
+  <a href="https://github.com/andrelinos" target="_blank">Autor</a>
+</p>
+
+<br>
+
+## 🧠 Sobre
+
+O projeto é um formulário de pesquisa UX multietapas, utilizado para coletar feedback dos usuários sobre sua experiência com um produto ou serviço.
+
+## 🛹 Funcionalidades
+
+✔️ cadastrar as reposta do usúario\
+✔️ Enviar os dados para o graphcms\
+✔️ Aplicação responsiva
+
+## 🚀 Tecnologias
+
+Abaixo poderá ter acesso às principais tecnologias usadas neste projeto
+
+- [NextJS](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Graphcms](https://graphcms.com/)
+- [Apollo Client](https://www.apollographql.com/)
+- [GraphQL](https://graphql.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [React-Icons](https://react-icons.github.io/react-icons/)
+
+## ✅ Requisitos para rodar a aplicação
+
+Antes de iniciar 🏁, você precisa ter [Git](https://git-scm.com) e [Node](https://nodejs.org/en/) instalado em seu sistema operacional.
+
+## 🏁 Iniciando
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# Clone este projeto
+$ git clone https://github.com/joaotelesk/formulario-ux.git
+# Acesse
+$ cd formulario-ux
+# Instale as dependências
+$ yarn
+# Execute o projeto
+$ yarn start
+# O projeto será inicializado em <http://localhost:3000>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📡 Configurações adicionais ao projeto
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Para executar o projeto você precisa configurar também o graphcms e adicionar os itens para que consiga adicionar e ler itens na aplicação.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+O link abaixo, tem o schema que você pode clonar e usar como base para entender o projeto:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [https://app.graphcms.com/clone/70dfa4bd54ea415698f3e817d088677f?name=New](https://app.graphcms.com/clone/970dfa4bd54ea415698f3e817d088677f?name=New)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### No esquema você pode adicionar os itens para listá-los
 
-## Learn More
+- FormUser
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 Licença
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Este projeto está sob licença MIT. Para mais informações acesse [LICENSE](LICENSE.md).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Feito com 💜 por <a href="https://github.com/joaotelesk" target="_blank">João Teles</a>
 
-## Deploy on Vercel
+&#xa0;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vamos nos conectar?
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [instagram](https://www.instagram.com/jaootelesk)
+- [linkedin](www.linkedin.com/in/joaotelesk)
+- [github](https://github.com/joaotelesk)
+
+<br />
+<br />
+<a href="#top">Voltar ao topo</a>
