@@ -11,7 +11,8 @@ import Steps from "@/src/components/Steps";
 
 /* Hooks */
 import useForm from "@/src/hooks/useForm";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
+import { useCreateFormUserMutationMutation } from "@/src/graphql/generated";
 
 type FormFields = {
   name: string;
@@ -33,12 +34,15 @@ const formTemplate: FormFields = {
 };
 
 export default function Home() {
+  const [createFormUser, { loading }] = useCreateFormUserMutationMutation();
+
   const [data, setData] = useState(formTemplate);
   function updateFieldHandler(key: string, value: string) {
     setData((prev) => {
       return { ...prev, [key]: value };
     });
   }
+
   const formComponents = [
     <UserForm data={data} updateFieldHandler={updateFieldHandler} />,
     <ReviewForm data={data} updateFieldHandler={updateFieldHandler} />,
@@ -46,6 +50,24 @@ export default function Home() {
   ];
   const { currentStep, currentComponent, changeStep, isLastStep, isFirstStep } =
     useForm(formComponents);
+
+  async function handlerFormUser(e: FormEvent) {
+    e.preventDefault();
+    if (isLastStep) {
+      await createFormUser({
+        variables: {
+          name: data.name,
+          birth: data.birth,
+          city: data.city,
+          quest1: data.quest1,
+          quest2: data.quest2,
+          quest3: data.quest3,
+          quest4: data.quest4,
+        },
+      });
+    }
+    changeStep(currentStep + 1, e);
+  }
   return (
     <>
       <Head>
@@ -66,7 +88,7 @@ export default function Home() {
           <div className="flex flex-col gap-5 items-center pt-20  ">
             <Steps currentStep={currentStep} />
 
-            <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
+            <form onSubmit={handlerFormUser}>
               <div>{currentComponent}</div>
               <div className="flex pt-10 gap-2  justify-center mb-4">
                 {!isFirstStep && (
@@ -85,7 +107,12 @@ export default function Home() {
                     <GrFormNext />
                   </button>
                 ) : (
-                  <button type="button" className="btn flex items-center gap-2">
+                  <button
+                    type="button"
+                    className="btn flex items-center gap-2"
+                    onClick={handlerFormUser}
+                    disabled={loading}
+                  >
                     <span>Enviar</span>
                     <FiSend color="black" />
                   </button>
