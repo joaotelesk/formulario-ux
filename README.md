@@ -22,7 +22,7 @@
   <a href="#checkered_flag-iniciando">Iniciando</a> &#xa0; | &#xa0;
   <a href="#-configurações-adicionais-ao-projeto">Schemas</a> &#xa0; | &#xa0;
   <a href="#memo-licença">Licença</a> &#xa0; | &#xa0;
-  <a href="https://github.com/andrelinos" target="_blank">Autor</a>
+  <a href="https://github.com/joaotelesk" target="_blank">Autor</a>
 </p>
 
 <br>
